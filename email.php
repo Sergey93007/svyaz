@@ -1,8 +1,8 @@
 <?php
-$to = "teryokhin930072@yandex.ru";//Почтовый ящик на который будет отправленно сообщение
-  $subject = "Вопрос с сайта";//Тема сообщения
-  $message = "Данные пользователя";//Сообщение, письмо
-// Проверяем метод запроса POST
+$to = "teryokhin930072@yandex.ru";
+  $subject = "Вопрос с сайта";
+  $message = "Данные пользователя";
+
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 		// Поочередно проверяем были переданны параметры формы или они пустые
 		if(isset($_POST["username"])){
@@ -25,7 +25,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 				$message  .= " Почта: ".$email;
 				$message  .= " Имя: ".$name;
 				$message  .= " Вопрос: ".$question;
-			// Окончание формирования тела письма
+			
 			// Посылаем письмо
 			mail ($to, $subject, $message);
 }
